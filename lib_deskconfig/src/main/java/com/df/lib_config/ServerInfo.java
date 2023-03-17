@@ -1,11 +1,12 @@
 package com.df.lib_config;
 
+
 import androidx.annotation.Keep;
 
 @Keep
 public class ServerInfo {
-    String ip;
-    int port;
+    private String ip;
+    private int port;
 
     public String getIp() {
         return ip;

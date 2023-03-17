@@ -92,7 +92,7 @@ public class DeskConfigManager {
         DeskConfig.getInstance().update(config);
     }
 
-    private Pair<String, String> tryParseDeskNumberToXY(String deskNumber) {
+    public static Pair<String, String> tryParseDeskNumberToXY(String deskNumber) {
         if (TextUtils.isEmpty(deskNumber)) {
             return null;
         }
