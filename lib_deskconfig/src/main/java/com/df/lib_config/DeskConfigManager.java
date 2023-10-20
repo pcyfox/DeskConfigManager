@@ -34,6 +34,10 @@ public class DeskConfigManager {
         deskNumberMappingDataPath = rootDir + mappingFileName;
     }
 
+    public DeskNumberMappingData getMappingData() {
+        return mappingData;
+    }
+
     //为了兼容老版本
     private void copyOldConfigFileToNewDir() {
 //        String oldRootDir = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator;
@@ -83,6 +87,7 @@ public class DeskConfigManager {
 
     private void loadLocationConfig() {
         DeskConfig config = loadDeskConfig();
+        if (config == null) return;
         if (isDeskNumberRight(config.getDeskNumber())) {
             String mappingNumber = findDeskNumberFormMappingFile(config.getDeskLine(), config.getDeskColumn());
             if (mappingNumber != null) {
